@@ -1,16 +1,23 @@
-import logo from './logo.svg';
+// import React from 'react';
+// import logo from './logo.svg';
+
+
 import './App.css';
-import Navbar from './Navbar'; 
-import React from 'react';
+import Header from './mycomponent/Header';
+import Todos from './mycomponent/Todos';
+import Footer from './mycomponent/footer';
+
 
 
 
 function App() {
   
   return (
-    <div className='App'>
-      <Navbar/>
-    </div>
+    <>
+    <Header/>
+    <Todos/>
+    <Footer/> 
+    </>
   );
 }
 

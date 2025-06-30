@@ -1,11 +1,11 @@
-// src/Navbar.js
-import React from 'react';
+import React from 'react'
 
-function Navbar() {
+export default function Header() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">MyApp</a>
+        <a className="navbar-brand" href="#">Todos List</a>
         <button
           className="navbar-toggler"
           type="button"
@@ -29,7 +29,6 @@ function Navbar() {
         </div>
       </div>
     </nav>
-  );
+    </div>
+  )
 }
-
-export default Navbar;
