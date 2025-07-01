@@ -1,11 +1,11 @@
 import React from 'react'
 
-export default function Header() {
+export default function Header(props) {
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
-        <a className="navbar-brand" href="#">Todos List</a>
+        <a className="navbar-brand" href="#">{props.title}</a>
         <button
           className="navbar-toggler"
           type="button"
@@ -14,7 +14,7 @@ export default function Header() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
+        {props.listOptions ? <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
               <a className="nav-link active" href="#">Home</a>
@@ -22,13 +22,17 @@ export default function Header() {
             <li className="nav-item">
               <a className="nav-link" href="#">Features</a>
             </li>
-            <li className="nav-item">
+           <li className="nav-item">
               <a className="nav-link" href="#">Pricing</a>
             </li>
           </ul>
-        </div>
+        </div>: "no options"}
       </div>
     </nav>
     </div>
   )
 }
+
+Header.defaultProps ={
+  title: "Enter your title here"
+}; 

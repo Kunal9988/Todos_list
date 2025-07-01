@@ -1,5 +1,3 @@
-// import React from 'react';
-// import logo from './logo.svg';
 
 
 import './App.css';
@@ -11,14 +9,36 @@ import Footer from './mycomponent/footer';
 
 
 function App() {
+
+  let todos =[
+    {
+      sno:1,
+      title:"go to the market",
+      desc: "you need to buy vegis"
+    },
+    {
+      sno:2,
+      title:"go to the gym",
+      desc: "you need to workout"
+    },
+    {
+   
+      sno:3,
+      title:"go to the office",
+      desc: "you need to work" 
+    }
+    
+  ]
   
   return (
     <>
-    <Header/>
-    <Todos/>
+    <Header title ="Kunal Todos"  listOptions = {true}/>
+    <Todos  todos={todos}/>
     <Footer/> 
     </>
   );
 }
 
-export default App;
+  export default App;
+
+
