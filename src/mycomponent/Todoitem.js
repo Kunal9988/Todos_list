@@ -1,11 +1,13 @@
 import React from 'react'
 
-const Todoitem = () => {
+export const TodoItem = ({todo}) => {
   return (
     <div>
-      todo works
+      <h4>{todo.title}</h4>
+      <p>{todo.desc}</p>
+      <button className="btn btn-danger">Delete</button>
     </div>
-  )
-}
+  );
+};
 
-export default Todo
+
