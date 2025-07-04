@@ -2,8 +2,10 @@
 
 import './App.css';
 import Header from './mycomponent/Header';
+import { AddTodos } from './mycomponent/AddTodos';
 import Todos from './mycomponent/Todos';
 import Footer from './mycomponent/footer';
+import { useState } from 'react';
 
 
 
@@ -11,7 +13,18 @@ import Footer from './mycomponent/footer';
 
 function App() {
 
-  let todos =[
+  const onDelete =(todo)=> {
+    console.log("i am onDelete of todo", todo);
+
+    setTodos(todos.filter((e)=>{
+      return e!==todo
+    }))
+  }
+
+  const addTodo = (title,desc)=>{
+    console.log("i am adding todo",title,desc);
+  }
+  const[todos,setTodos] = useState([
     {
       sno:1,
       title:"go to the market",
@@ -29,13 +42,14 @@ function App() {
       desc: "you need to work" 
     }
     
-  ]
+  ]);
   
   return (
     <>
     <Header title ="Kunal Todos"  listOptions = {true}/>
-    <Todos  todos={todos}/>
-    <Footer/> 
+    <AddTodos addTodos = {addTodo}/>
+    <Todos todos={todos} onDelete={onDelete} />
+    {/* <Footer/>  */}
     </>
   );
 }
